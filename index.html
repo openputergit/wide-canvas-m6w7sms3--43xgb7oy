@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadsafe Maintenance | Professional Cleaning Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .transition-fade {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">Broadsafe</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <button onclick="showPage('home')" class="nav-link text-gray-600 hover:text-blue-600">Home</button>
+                    <button onclick="showPage('about')" class="nav-link text-gray-600 hover:text-blue-600">About Us</button>
+                    <button onclick="showPage('services')" class="nav-link text-gray-600 hover:text-blue-600">Services</button>
+                    <button onclick="showPage('staff')" class="nav-link text-gray-600 hover:text-blue-600">Our Staff</button>
+                    <button onclick="showPage('contact')" class="nav-link text-gray-600 hover:text-blue-600">Contact</button>
+                </nav>
+                <div class="md:hidden">
+                    <button id="menuButton" class="text-gray-600">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white w-full">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <button onclick="showPage('home')" class="block w-full text-left text-gray-600 hover:text-blue-600">Home</button>
+                <button onclick="showPage('about')" class="block w-full text-left text-gray-600 hover:text-blue-600">About Us</button>
+                <button onclick="showPage('services')" class="block w-full text-left text-gray-600 hover:text-blue-600">Services</button>
+                <button onclick="showPage('staff')" class="block w-full text-left text-gray-600 hover:text-blue-600">Our Staff</button>
+                <button onclick="showPage('contact')" class="block w-full text-left text-gray-600 hover:text-blue-600">Contact</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+                <div class="container mx-auto px-4">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Bringing Shine to Your Space</h1>
+                    <p class="text-xl mb-8">Professional And Quality Services With Efficiency, Excellence, Expertise – Our Promise</p>
+                    <button onclick="showPage('contact')" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                        Get a Quote
+                    </button>
+                </div>
+            </div>
+
+            <!-- Services Overview -->
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <i class="bi bi-shield-check text-4xl text-blue-600"></i>
+                        <h3 class="text-xl font-semibold mt-4">Cleaning</h3>
+                        <p class="mt-2 text-gray-600">A responsible approach to Health & Safety</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <i class="bi bi-tools text-4xl text-blue-600"></i>
+                        <h3 class="text-xl font-semibold mt-4">Maintenance</h3>
+                        <p class="mt-2 text-gray-600">General repairs and Handyman services</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <i class="bi bi-shield-lock text-4xl text-blue-600"></i>
+                        <h3 class="text-xl font-semibold mt-4">Security Services</h3>
+                        <p class="mt-2 text-gray-600">We Fix It All, So You Don't Have To</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="container mx-auto px-4 py-16">
+                <h2 class="text-3xl font-bold mb-8">About Us</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <p class="text-gray-600 mb-6">
+                            Broadsafe Maintenance Pty Ltd is an Australian owned company that has been successful in providing tailor made integrated services as per our client's needs. When it comes to cleaning, building maintenance and security services, Broadsafe Maintenance Pty Ltd is a one stop business for all our client's requirements.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-blue-600">350+</div>
+                                <div class="text-sm text-gray-600">Cleaning Projects</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-blue-600">480+</div>
+                                <div class="text-sm text-gray-600">Maintenance Jobs</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-blue-600">80+</div>
+                                <div class="text-sm text-gray-600">Security Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Why Choose Us?</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center"><i class="bi bi-check-circle text-blue-600 mr-2"></i> Outstanding service at excellent prices</li>
+                            <li class="flex items-center"><i class="bi bi-check-circle text-blue-600 mr-2"></i> Eco-friendly cleaning products</li>
+                            <li class="flex items-center"><i class="bi bi-check-circle text-blue-600 mr-2"></i> 24/7 backup service</li>
+                            <li class="flex items-center"><i class="bi bi-check-circle text-blue-600 mr-2"></i> Fully insured and certified</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page">
+            <div class="container mx-auto px-4 py-16">
+                <h2 class="text-3xl font-bold mb-12 text-center">Our Services</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <i class="bi bi-brush text-4xl text-blue-600"></i>
+                        <h3 class="text-xl font-semibold mt-4">Commercial Cleaning</h3>
+                        <p class="mt-2 text-gray-600">Professional cleaning for offices and commercial spaces</p>
+                        <button onclick="requestService('Commercial Cleaning')" class="mt-4 text-blue-600 hover:text-blue-700">Learn More →</button>
+                    </div>
+                    <!-- Add more service cards -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Staff Page -->
+        <section id="staff" class="page">
+            <div class="container mx-auto px-4 py-16">
+                <h2 class="text-3xl font-bold mb-12 text-center">Our Team</h2>
+                <div id="staffList" class="grid md:grid-cols-3 gap-8">
+                    <!-- Staff members will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+                        <div class="space-y-4">
+                            <p class="flex items-center"><i class="bi bi-telephone mr-2"></i> (+61) 0406 817 189</p>
+                            <p class="flex items-center"><i class="bi bi-envelope mr-2"></i> broadsafemaintenance@gmail.com</p>
+                            <p class="flex items-center"><i class="bi bi-geo-alt mr-2"></i> Bundamba, QLD 4304, Australia</p>
+                        </div>
+                        
+                        <form id="contactForm" class="mt-8 space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Name</label>
+                                <input type="text" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg">
+                        <div id="map" class="h-96 bg-gray-200 rounded-lg">
+                            <!-- Map will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                    <p class="text-gray-400">Professional cleaning and maintenance services you can trust.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Cleaning Services</li>
+                        <li>Building Maintenance</li>
+                        <li>Security Services</li>
+                        <li>Specialised Services</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>(+61) 0406 817 189</li>
+                        <li>broadsafemaintenance@gmail.com</li>
+                        <li>Bundamba, QLD 4304, Australia</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-400"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-blue-400"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-400"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2023 Broadsafe Maintenance Pty Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Database configuration
+        const appSlug = 'broadsafe-cleaning-123456';
+        const apiEndpoint = 'https://r0c8kgwocscg8gsokogwwsw4.zetaverse.one/mongodb';
+        const authToken = 'W5xWhIG70rMZdfU0GSzsjnzPYlp2';
+
+        // Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('mobileMenu').classList.add('hidden');
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menuButton').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        appSlug,
+                        action: 'create',
+                        collection: 'contact_messages',
+                        data: formData
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Thank you for your message. We will get back to you soon!');
+                    e.target.reset();
+                } else {
+                    alert('There was an error sending your message. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again.');
+            }
+        });
+
+        // Load staff members
+        async function loadStaffMembers() {
+            try {
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        appSlug,
+                        action: 'read',
+                        collection: 'staff'
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    const staffList = document.getElementById('staffList');
+                    staffList.innerHTML = result.result.map(staff => `
+                        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                            <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4">
+                                <img src="${staff.image || 'https://via.placeholder.com/150'}" 
+                                     alt="${staff.name}" 
+                                     class="w-full h-full rounded-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-semibold">${staff.name}</h3>
+                            <p class="text-gray-600">${staff.position}</p>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading staff:', error);
+            }
+        }
+
+        // Service request
+        async function requestService(serviceName) {
+            try {
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        appSlug,
+                        action: 'create',
+                        collection: 'service_requests',
+                        data: {
+                            service: serviceName,
+                            timestamp: new Date().toISOString()
+                        }
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showPage('contact');
+                }
+            } catch (error) {
+                console.error('Error requesting service:', error);
+                alert('There was an error processing your request. Please try again.');
+            }
+        }
+
+        // Initialize
+        window.onload = () => {
+            loadStaffMembers();
+        };
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
